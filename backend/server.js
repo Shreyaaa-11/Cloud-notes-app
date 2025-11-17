@@ -11,7 +11,7 @@ app.use(cors({
 }));
 
 // Simple API key middleware
-const API_KEY = "my-secret-key";
+const API_KEY = process.env.API_KEY || "my-secret-key";
 app.use((req, res, next) => {
   if (req.headers["x-api-key"] !== API_KEY) {
     return res.status(403).json({ msg: "Invalid API Key" });
@@ -56,4 +56,6 @@ app.delete("/notes/:id", (req, res) => {
   res.json({ msg: "Deleted" });
 });
 
-app.listen(5000, () => console.log("Backend running on port 5000"));
+// ✔ FIXED: Dynamic port for Render
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));

@@ -1,4 +1,4 @@
-const API_URL = "https://your-render-url.onrender.com";
+const API_URL = "https://cloud-notes-app-1yn4.onrender.com";
 const API_KEY = "my-secret-key";
 
 async function addNote() {
