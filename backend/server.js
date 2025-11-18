@@ -7,6 +7,14 @@ app.use(express.json());
 
 console.log("Loaded API_KEY:", process.env.API_KEY);
 
+// Debug logger - this prints all headers Render receives
+app.use((req, res, next) => {
+  console.log("→ Incoming request");
+  console.log("Headers received:", req.headers);
+  next();
+});
+
+
 // Strict CORS for security
 app.use(cors({
   origin: ["https://cloud-notes-app-eight.vercel.app"]
