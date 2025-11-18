@@ -9,7 +9,7 @@ console.log("Loaded API_KEY:", process.env.API_KEY);
 
 // Strict CORS for security
 app.use(cors({
-  origin: ["https://cloud-notes-app-eight.vercel.app/"]
+  origin: ["https://cloud-notes-app-eight.vercel.app"]
 }));
 
 // Simple API key middleware
