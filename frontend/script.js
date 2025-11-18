@@ -1,5 +1,5 @@
 const API_URL = "https://cloud-notes-app-1yn4.onrender.com";
-const API_KEY = "my-secret-key";
+const API_KEY = "secret";
 
 async function addNote() {
     const text = document.getElementById("noteText").value;

@@ -5,13 +5,15 @@ import { v4 as uuid } from "uuid";
 const app = express();
 app.use(express.json());
 
+console.log("Loaded API_KEY:", process.env.API_KEY);
+
 // Strict CORS for security
 app.use(cors({
-  origin: ["https://your-frontend-url.vercel.app"]
+  origin: ["https://cloud-notes-app-eight.vercel.app/"]
 }));
 
 // Simple API key middleware
-const API_KEY = process.env.API_KEY || "my-secret-key";
+const API_KEY = "secret";
 app.use((req, res, next) => {
   if (req.headers["x-api-key"] !== API_KEY) {
     return res.status(403).json({ msg: "Invalid API Key" });
